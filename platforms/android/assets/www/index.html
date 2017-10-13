@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MYHRM</title>
+
+     <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when PhoneGap is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.5.0.js has not.
+    // When PhoneGap is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+        window.open('http://www.hrapp.co/appmanager/mobilemanager', '_self');
+        
+    }
+
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    //
+    function onDeviceReady() {
+        
+        document.addEventListener("offline", onOffline, false);
+    }
+
+    // Handle the offline event
+    //
+    function onOffline() {
+        alert("Please connect to internet and try again");
+    }
+       
+
+    </script>
+  </head>
+  <body onload="onLoad()">
+  </body>
+</html>
